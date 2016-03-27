@@ -1,0 +1,30 @@
+// -*-js2-*-
+/*global require, process, __dirname */
+
+var path = require('path');
+
+const build_js = require('../core/client').build_js;
+
+const argv = require('yargs').options({
+  'path': {
+    alias: 'js_dir',
+    desc: "output directory path",
+    type: 'string',
+    default: path.join(__dirname, '..', 'build', 'server_static',
+                       'js', 'client')
+  },
+  'c': {
+    alias: 'cts',
+    desc: "continuous client build",
+    type: 'boolean'
+  }
+}).argv;
+
+Promise.resolve().then(function () {
+  return build_js(argv.js_dir, {cts: argv.cts});
+}).then(function () {
+  console.log("js build finished");
+}, function (err) {
+  console.log("js build failed with error");
+  console.log(err);
+});

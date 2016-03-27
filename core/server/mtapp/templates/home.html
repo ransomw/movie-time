@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+  movie time
+</h1>
+<div id="app">
+  <span>loading...</span>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{url_for('static', filename='js/client/home.js')}}">
+</script>
+{% endblock %}
