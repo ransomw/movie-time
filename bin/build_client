@@ -6,7 +6,7 @@ var path = require('path');
 const build_js = require('../core/client').build_js;
 
 const argv = require('yargs').options({
-  'path': {
+  'p': {
     alias: 'js_dir',
     desc: "output directory path",
     type: 'string',
