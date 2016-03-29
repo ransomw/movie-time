@@ -18,6 +18,6 @@ developed with python 3.5.1 and node 5.5.0.
 
 * `node bin/build_client`
   - `-c` flag for automatic rebuilds
-* `python core/server/run.py`
+* `python bin/run.py`
   - `PORT` environment variable for alternate http port
 
