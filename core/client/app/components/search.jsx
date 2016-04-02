@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var TheaterResults = require('./results_theater.jsx');
+var TheaterResults = require('./results_theater.js');
 
 var SearchError = require('../state').SearchError;
 var actions = require('../state').actions;

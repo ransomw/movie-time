@@ -1,0 +1,9 @@
+<rt-require dependency="../components/result_theater.jsx" as="Theater"/>
+<div>
+  <h3>search results for {this.props.zip_code}</h3>
+  <ul>
+    <li rt-repeat="theater_data in this.props.theaters_data">
+      <Theater theater_data={theater_data} />
+    </li>
+  </ul>
+</div>
