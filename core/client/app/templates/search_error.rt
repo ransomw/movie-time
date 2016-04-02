@@ -1,0 +1,1 @@
+<span>{this.props.search_err.span_text()}</span>

@@ -3,7 +3,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var SearchShowtimes = require('./components/search.jsx').SearchShowtimes;
+var SearchShowtimes = require('./components/search').SearchShowtimes;
 
 var state = require('./state');
 

@@ -1,0 +1,15 @@
+<div>
+  <form action="javascript:void(0);">
+    <input
+       type="text" placeholder="zip code"
+       value={this.state.str_search}
+       onChange={this.handle_change_str_search}
+       />
+    <button
+       disabled={!this.is_zip_valid()}
+       onClick={this.handle_click_search}>search</button>
+  </form>
+  <span rt-if="this.show_input_err()">
+    invalid zip code!
+  </span>
+</div>

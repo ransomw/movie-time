@@ -1,0 +1,6 @@
+<rt-require dependency="../components/search_input_zip" as="ZipSearchInput"/>
+<div>
+  <h2>search showtimes</h2>
+  <ZipSearchInput />
+  {this.get_component_search_results()}
+</div>
