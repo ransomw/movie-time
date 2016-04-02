@@ -12,9 +12,7 @@
     "yargs": "4.3.2",
     "browserify": "13.0.0",
     "watchify": "3.7.0",
-    "react-templatify": "0.3.2",
-    "react-tools": "0.13.3",
-    "through": "2.3.8"
+    "react-templatify": "0.3.2"
   },
   "engines": {
     "node": "5.5.0"

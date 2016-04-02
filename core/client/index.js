@@ -6,7 +6,6 @@ var fs = require('fs');
 const browserify = require('browserify');
 const watchify = require('watchify');
 const react_templatify = require('react-templatify');
-const jsx_transform = require('./jsx_transform');
 
 const build_js_file = function (path_src, path_out, opt_args) {
 	const opts = opt_args || {};
@@ -26,7 +25,6 @@ const build_js_file = function (path_src, path_out, opt_args) {
     arr_plugins.push(watchify);
   }
   const arr_transforms = [];
-  arr_transforms.push(jsx_transform);
   arr_transforms.push(react_templatify);
 	const bfy = browserify({
     entries: [path_src],
