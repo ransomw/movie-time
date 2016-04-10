@@ -6,6 +6,7 @@ import sys
 import re
 import shutil
 import argparse
+import unittest
 
 import flask
 from flask import render_template
@@ -15,6 +16,7 @@ PROJ_ROOT = os.path.abspath(
 )
 
 SERVER_DIR = os.path.join(PROJ_ROOT, 'core', 'server')
+TEST_DIR = os.path.join(PROJ_ROOT, 'test')
 CLIENT_TEST_DIR = os.path.join(PROJ_ROOT, 'build', 'client_test')
 TEMPLATES = [
     {
@@ -23,8 +25,10 @@ TEMPLATES = [
 ]
 
 sys.path.append(SERVER_DIR)
+sys.path.append(TEST_DIR)
 
 import mtapp
+import mttest.func.search
 
 def parse_args():
     """ parse script arguments """
@@ -32,7 +36,7 @@ def parse_args():
     arg_parser.add_argument(
         'task',
         help="the task to perform",
-        choices=['run', 'templates'],
+        choices=['run', 'templates', 'test'],
         default='run')
     arg_parser.add_argument(
         '-p', '--port', dest='port',
@@ -109,12 +113,18 @@ def templates():
     _prepare_fixtures()
 
 
+def run_tests():
+    suite = unittest.TestLoader().loadTestsFromModule(mttest.func.search)
+    unittest.TextTestRunner().run(suite)
+
 ARGS = parse_args()
 
 if ARGS.task == 'run':
     run(ARGS.port)
 elif ARGS.task == 'templates':
     templates()
+elif ARGS.task == 'test':
+    run_tests()
 else:
     raise NotImplementedError((
         "unimplemented task '" +

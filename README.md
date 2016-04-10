@@ -9,6 +9,8 @@ a web app that searches movie showtimes by zip code written to demo [flask](http
 developed with python 3.5.1 and node 5.5.0.
 [pyenv](https://github.com/yyuu/pyenv) and [nvm](https://github.com/creationix/nvm) are useful for managing these runtimes.
 
+test expects a [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) executable on the system's path
+
 ##### install
 
 * `pip install -r requirements.txt`
@@ -22,6 +24,13 @@ developed with python 3.5.1 and node 5.5.0.
   - `-c` flag for automatic rebuilds
 * `python bin/run.py run`
   - `-p` flag for alternate http port
+
+###### test
+
+functional (end-to-end) test configuration is set in the file
+`test/mttest/func/test.conf`
+and tests are run with the command
+`python bin/run.py test`
 
 ###### frontend demo
 
